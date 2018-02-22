@@ -1,0 +1,540 @@
+ /*Standard oppsett CSS*/
+    /* css for tekst og generelle element på siden */
+        html{
+            overflow-y: scroll;
+            background-color: rgb(43, 43, 43);
+        }
+
+        /* Main elements */
+            body {
+                font-family: "Segoe UI",Arial,sans-serif;
+                width: 100%;
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+            #top_div{
+                position: absolute;
+                width: 100%;
+                z-index: 100;
+            }
+
+            h1, h2, h3{
+                background-color: rgb(243, 243, 243);
+                color: rgb(43, 43, 43);
+                padding: 25px;
+                margin: 0;
+                text-align: left;
+
+            }
+
+            p {
+                padding: 25px;
+                color: rgb(255, 255, 255);
+                font-size: 22px;
+                margin: 0;
+            }
+
+            a {
+                font-size: 22px;
+                font-weight: none;
+                text-align: center;
+            }
+
+            footer{
+                font-size: 22px;
+                font-weight: none;
+                text-align: center;
+                background-color: rgb(243, 243, 243);
+                color: rgb(43, 43, 43);
+                padding: 25px;
+                margin: 0 auto; 
+            }
+
+            #active_el{
+                border-bottom: 10000px solid rgb(255, 255, 255);
+            }
+
+            .active_el_rainbow{
+                border: 2px solid white;
+                color: white;
+                padding: 15px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 19px;
+                margin: 4px 2px;
+                border-radius: 8px;
+                -webkit-transition-duration: 0.3s; /*safari animasjons kode*/
+                transition-duration: 0.3s;
+                opacity: 1;
+
+                background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+                background-size: 3200% 3200%;
+                
+                -webkit-animation: rainbow 18s ease infinite;
+                -z-animation: rainbow 18s ease infinite;
+                -o-animation: rainbow 18s ease infinite;
+                animation: rainbow 18s ease infinite;
+            }
+
+    /* Css animasjoner */
+        /* Rainbow animation */
+            @-webkit-keyframes rainbow {
+                0%{background-position:0% 80%}
+                50%{background-position:100% 20%}
+                100%{background-position:0% 80%}
+            }
+            @-moz-keyframes rainbow {
+                0%{background-position:0% 80%}
+                50%{background-position:100% 20%}
+                100%{background-position:0% 80%}
+            }
+            @-o-keyframes rainbow {
+                0%{background-position:0% 80%}
+                50%{background-position:100% 20%}
+                100%{background-position:0% 80%}
+            }
+            @keyframes rainbow { 
+                0%{background-position:0% 80%}
+                50%{background-position:100% 20%}
+                100%{background-position:0% 80%}
+            }
+
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                opacity: 0;
+                transform: translateX(200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromTop{
+            0% {
+                opacity: 0;
+                transform: translateY(-100%)
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                }
+        }
+
+    
+
+    /* Modal */
+        #modal_main{
+            background-color:#363636; 
+            font-size: 26px;
+            overflow: hidden;
+        }
+
+        #modal_header{
+            text-align: center;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        #modal_button {
+            animation: 0.2s ease-out 0s 1 slideInFromTop;
+            background-color: rgba(0, 0, 0, 0.685);
+            border: 2.5px solid rgb(175, 76, 76);
+            color: white;
+            padding: 20px;
+            float: right;
+            font-size: 22px;
+            margin-top: 12px;
+            margin-right: 12px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            -webkit-transition-duration: 0.3s; 
+            transition-duration: 0.6s;
+        }
+
+        #modal_button:hover {
+            background-color: rgb(175, 76, 76);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4);
+            -webkit-transition-duration: 0.3s; /*safari animasjons kode*/
+            transition-duration: 0.5s; 
+        }
+
+        .modal_content {
+            background-color: #363636;
+            margin: 0% auto; 
+            padding: 15px, 20px;
+            border: 4px solid #888;
+            width: 80%; 
+            height: 60%;
+            -webkit-transition-duration: 0.3s; /*safari animasjons kode*/
+            transition-duration: 0.5s;
+        }
+
+        .close {
+            color: #aaa;
+            margin: 0px 15px;
+            padding: 0px;
+            float: right;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(175, 76, 76);
+            text-decoration: none;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+
+
+
+    /* Nav list */ 
+        ul {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+
+            z-index: 100;
+            height: 70.3px;
+            vertical-align: middle;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            overflow: hidden; 
+        }
+
+        li {
+            display: block;
+            width: 100%;
+            float: left;
+            margin: 0 auto; 
+        }
+
+        li a {
+            text-align: center;
+            margin-top: 4px;
+            display: block;
+            font-size: 28px;
+            color: rgb(255, 255, 255);
+            padding: 12px;
+            text-decoration: none;
+            border-bottom: 10000px solid rgba(175, 76, 76, 0);
+            -webkit-transition-duration: 0.3s; /*safari animasjons kode*/
+            transition-duration: 0.3s
+        }
+
+        li a:hover {
+            -webkit-text-stroke:rgb(255, 255, 255);
+            border-bottom: 10000px solid rgb(255, 255, 255);
+            color: rgba(255, 255, 255, 0.561);
+            -webkit-transition-duration: 0.3s; /*safari animasjons kode*/
+            transition-duration: 0.3s
+        }
+
+    /* Buttons CSS */
+        .rounded_button {
+            background-color: rgba(0, 0, 0, 0.425);
+            border: 2px solid rgb(255, 255, 255);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 19px;
+            border-radius: 8px;
+            -webkit-transition-duration: 0.25s; /*safari animasjons kode*/
+            transition-duration: 0.25s;
+            opacity: 0.4;
+        }
+
+        .rounded_button:hover {
+            background-color: rgba(133, 133, 133, 0.541);
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+    /* Input CSS  */
+        .input_field {
+        background-color: rgb(255, 255, 255);
+        color: rgb(44, 44, 44);
+        padding: 10px;
+        font-size: 24px;
+        border-radius: 6px;
+        border: 2px solid rgba(255, 255, 255, 0);
+        text-align: left;
+        }
+
+    /* Focus Styling */
+        input[type=range]:focus {
+            outline: none; 
+            
+        }
+
+        button:focus, button:selection{
+            outline: none; 
+        }
+
+        p:focus{
+            outline: none;
+        }
+
+        
+
+
+/*CSS for spesifikke sider*/
+    /* index side */
+        #mega_div{
+            margin-top: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        #boxes_div{
+            display: grid;
+            text-align: center;
+            grid-template-columns: 50% 50%;
+            margin: 0 auto;
+        }
+
+        .box_span{
+            display:block;
+            background-color: rgba(34, 34, 34, 0);
+        }
+
+        /* Home Boxes */ 
+            /* Box 1 */    
+                #home_box_1{
+                opacity: 1;
+                height: 500px;
+                border: 5px solid white;
+                background-image: url("images/cork-board.jpg");
+                background-size: 100%;
+                padding: 5%;
+                }
+                #box_span_1{
+                    position: relative;
+                    font-size: 56px;
+                    color: white;
+                    background-color: rgba(34, 34, 34, 0); 
+                }
+
+            /* Box 2 */
+                #home_box_2{
+                    opacity: 1;
+                    height: 500px;
+                    border: 5px solid white;
+                    background-image: url("images/cateplosiong.png");
+                    background-size: 106%;
+                    padding: 5%;
+                }
+                #box_span_2{
+                    position: relative;
+                    font-size: 56px;
+                    color: white;
+                }
+
+            #home_box_1:hover, #home_box_2:hover, #home_box_3:hover, #home_box_4:hover{
+                opacity: 0.4;
+                cursor: pointer;
+                border: 5px solid white;
+            }
+
+    /* Notice Board */
+        /* Main Menu */
+
+            #board_menu{
+                position: absolute;
+                background-color: rgb(43, 43, 43);
+                width: 100%;
+                box-shadow: #3333339f;
+
+                -webkit-transition-duration: 0.5s; /*safari animasjons kode*/
+                transition-duration: .8s;
+            }
+
+            #board_buttons{
+                display: grid;
+                grid-template-columns: 75% 25%; 
+                width: 70%;
+                height: 100%;
+                margin: 20px auto;
+                font-size: 36px;
+                background-color: #e8b71d;
+                border-right: solid white 2px;
+                border-left: solid white 2px;
+
+                -webkit-transition-duration: 0.8s; /*safari animasjons kode*/
+                transition-duration: 0.8s;
+            }
+
+            .tool_div{
+                border-right: solid white 2px;
+                border-left: solid white 2px;
+                margin: 0 auto;
+                height: 100%;
+                width: 100%;
+            }
+
+            .tool_div:hover{
+                background-color: #2e2d2d0c;
+            }
+
+        /* Menu Elements */
+            .menu_p{
+                font-family: "Segoe UI",Arial,sans-serif;
+                font-size: 26px;
+                font-weight: bold;
+                margin-top: 15px;
+                padding: 5px;
+                text-align: center;
+            }
+
+            #new_post_text{
+                margin-left: 2%;
+                margin-bottom: 2%;
+                padding: 20px;
+                width: 85%; 
+            }
+
+            #new_post_button{
+                position: absolute;
+                margin: 0 auto;
+                margin-left: 10px;
+                padding: 5px;
+                background: rgb(255, 255, 255);
+            }
+            
+            #help_icon{
+                position: relative;
+                margin: 10px auto;
+                display: block;
+            }
+
+            .invert { filter: invert(100%); }
+
+            #help_icon:hover{
+                box-shadow: 4px 4px 8px #ffffff9c;
+                cursor: pointer;
+            }
+
+        #user_post_div{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            margin-top: 300px;
+            height: 100%;
+            width: 100%;
+            background-color: #33333300;
+        }
+
+        .post_styles{
+            position: relative;
+            background-color: white;
+            border: 2px solid rgba(36, 36, 36, 0.664);
+            border-radius: 6px;
+            padding: 10px;
+            margin: 20px;
+
+            font-size: 24px;
+        }
+    /* Array side */
+        #photowall_div{
+            display: grid;
+            grid-template-columns: 5% 90% 5%;
+
+            overflow: hidden;
+
+            background-color: rgb(46, 46, 46);
+            color: #333333;
+            width: 80%;
+            height: 810px;
+            margin: 0px auto;
+            border: 5px solid #ffffff;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #image{
+            float: left;
+            height: 100%;
+            width: 100%
+        }
+
+        #forward_btn{
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            font-size: 56px;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 0;
+            overflow: hidden;
+        }
+        #backward_btn{
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            font-size: 56px;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        #stjerne_div{
+            display: none;
+        }
+
+        #stars_btn{
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            width: 100%;
+            padding: 60px;
+            font-size: 86px;
+        }
+
+        #go_back_btn{
+            display: none;
+            text-align: center;
+            margin: 20px auto;
+            width: 100%;
+            padding: 60px;
+            font-size: 86px;
+        }
+
+        .stjerne{
+            background-color: #e3e51d;
+            border-radius: 50%;
+        }
+
+

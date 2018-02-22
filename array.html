@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta data and stylesheet>    
+        <meta charset="utf8">
+        <!--Site Description goes here --> 
+        <meta meta name="Description" content="Page description">
+        <!--Site Keywords go here --> 
+        <meta name="Keywords" content="">  
+    
+
+        <!-- Link to other files files go here -->     
+        <link rel="stylesheet" href="index.css">
+        
+
+<title>Home - Oppgaver</title>
+</head>
+
+<body>
+    <!-- This is a modal -->
+    <button id="modal_button">Page Info</button>
+    <!-- Actual modal -->
+    <div id="pageinfo_modal" class="modal">
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <h2 id="modal_header"> Fra denne siden kan du navigere til de ulike oppgavene </h2>
+            <div>
+                <p id="modal_main">
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h1>HOME</h1>
+
+    <article class="nav_article">
+        <nav>
+            <ul class="">
+                <li class="active_el">
+                    <a href="index.html">  Home  </a>
+                </li>
+                <li class="">
+                    <a href="board.html">  Notice Board  </a>
+                </li>
+                <li class="nav_links">
+                    <a href="array.html">  Array Tests  </a>
+                </li>
+            </ul>
+        </nav>
+    </article> 
+    <br>
+    <div id="photowall_div">
+        <div id="stjerne_div">
+
+        </div>
+        <div id="1">
+            <button id="forward_btn" class="rounded_button" onclick="changeImg('next')"> < </buttons>
+        </div>
+        <div id="2">
+            <img id="image" src="images\0.jpg" alt="" height="100%">
+        </div>
+        <div id="3">
+            <button id="backward_btn" class="rounded_button" onclick="changeImg('last')"> > </button>>
+        </div>
+    </div>
+
+    <div id="star_div">
+        <button id="stars_btn" class="rounded_button"> See space</button>
+        <button id="go_back_btn" class="rounded_button"> Fuck, go back</button>
+    </div>
+
+    <script src="array.js"></script> 
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta data and stylesheet>    
+        <meta charset="utf8">
+        <!--Site Description goes here --> 
+        <meta meta name="Description" content="Page description">
+        <!--Site Keywords go here --> 
+        <meta name="Keywords" content="">  
+    
+
+        <!-- Link to other files files go here -->     
+        <link rel="stylesheet" href="index.css">
+        
+
+<title>Home - Oppgaver</title>
+</head>
+
+<body>
+    <!-- This is a modal -->
+    <button id="modal_button">Page Info</button>
+    <!-- Actual modal -->
+    <div id="pageinfo_modal" class="modal">
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <h2 id="modal_header"> Her kan du legge igjen et innlegg </h2>
+            <div>
+                <p id="modal_main">
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h1>Notice Board</h1>
+
+    <div id="top_div">
+        <article class="nav_article">
+            <nav>
+                <ul class="nav_links">
+                    <li id="">
+                        <a href="index.html">  Home  </a>
+                    </li>
+                    <li id="active_el">
+                        <a href="board.html">  Notice Board  </a>
+                    </li>
+                    <li class="">
+                        <a href="array.html">  Array Tests  </a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+        
+        <div id="board_menu">
+            <div id="board_buttons">
+                <div class="tool_div" id="new_post">
+                    <p class="menu_p" id="new_post_main"></p>
+                        <input type="text" id="new_post_text" class="input_field" autofocus placeholder="Input note">
+                        <button class="rounded_button" id="new_post_button"> <img src="images\paper.png" alt="" id="note" height="50px" width="50px"> </button>
+                </div>
+
+                <div class="tool_div">
+                    <img src="images\help.png" alt="" id="help_icon" class="invert" height="100px" width="100px">
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div id="user_post_div">
+    </div>
+ 
+</body>
+    <script src="board.js"></script>
+</html>

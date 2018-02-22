@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            #divWrapper{
+                padding: 10px;
+                width: 90%;
+                margin: 0 auto;
+            }
+            #divForfattar{
+                width: 200px;
+                height: 50px;
+                background-color: white;
+                float: left;
+                padding: 10px;
+                margin: 10px;
+            }
+            body{
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <button id="lagreLokalt">Lagre filer i localstorage</button>
+            <button id="henteLokalt">Hente filer frå localstorage</button>
+        </p>
+       <form id="frmRegistrerForfatter">
+           <input id="inpForfatter" type="text" placeholder="Navn på forfattar" required>
+           <input id="inpTittel" type="text" placeholder="Tittel" required>
+           <button type="submit">Registrer bok</button>
+        </form>
+        <div id="divWrapper">
+            <div id="divForfattar">Her kjem det små notiser med informasjon om forfattarar og bøker dei har skrive.</div>
+        </div> <!-- Avsluttar wrapper -->
+
+        <script>
+            var frmRegistrerForfatter = document.getElementById("frmRegistrerForfatter");
+            var inpForfatter = document.getElementById("inpForfatter");
+            var inpTittel = document.getElementById("inpTittel");
+            var divWrapper = document.getElementById("divWrapper");
+
+            var lagreLokalt = document.getElementById("lagreLokalt");
+            var henteLokalt = document.getElementById("henteLokalt");
+            lagreLokalt.onclick = f_lagreLokalt;
+            henteLokalt.onclick = f_henteLokalt;
+
+            var arrDivBoksar = []; // Array som skal innehalde forfattar og tilhøyrande bok i kvart element.
+
+            frmRegistrerForfatter.onsubmit = function(evt){
+                evt.preventDefault();
+                divWrapper.innerHTML += "<div id='divForfattar'>" + inpForfatter.value + ": " + inpTittel.value + "</div>"; // Legger til div-boks i HTML
+                arrDivBoksar.push(inpForfatter.value + ": " + inpTittel.value + ". "); // Legger til forfattar og tittel i array, som eit samla element
+                inpForfatter.value = ""; // Tømmer tekstfelta
+                inpTittel.value = "";
+                console.log("Array: " + arrDivBoksar); // Sjekkar innhaldet i array
+            }
+
+            function f_lagreLokalt(){
+                arrSomTekst = JSON.stringify(arrDivBoksar);
+                localStorage.mineForfattarar = arrSomTekst;
+            }
+
+            function f_henteLokalt(){
+                var utpakkaForfattarar = JSON.parse(localStorage.mineForfattarar);
+                for(var forfattar of utpakkaForfattarar){
+                    console.log("Forfattar, tittel: " + forfattar);
+                }
+            }
+        </script> 
+    </body>
+</html>
+registrer-forfatter-start.html
+Åpne med Google Dokumenter
+Viser registrer-forfatter-start.html.
